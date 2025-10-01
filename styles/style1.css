@@ -543,7 +543,7 @@ nav .menu-btn {
 
 .home .home-content .text .text-one {
   font-size: 28px;
-  color: #1565c0;
+  color: #000000;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
 }
@@ -551,19 +551,15 @@ nav .menu-btn {
 .home .home-content .text .text-two {
   font-size: 75px;
   font-weight: 700;
-  color: #0d47a1;
+  color: #000000;
   margin-left: -3px;
   text-shadow: 3px 3px 6px rgba(255, 255, 255, 1);
-  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .home .home-content .text .text-three {
   font-size: 42px;
   margin: 5px 0;
-  color: #1976d2;
+  color: #000000;
   font-weight: 600;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
 }
@@ -571,7 +567,7 @@ nav .menu-btn {
 .home .home-content .text .text-four {
   font-size: 24px;
   margin: 5px 0;
-  color: #2196f3;
+  color: #000000;
   font-weight: 500;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
