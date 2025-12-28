@@ -8,11 +8,11 @@
  scroll-behavior: smooth;
 }
 
-/* Global beautiful blue background */
+/* Global professional background */
 body {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 25%, #bbdefb 50%, #90caf9 75%, #e1f5fe 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #e3f2fd 50%, #f8f9fa 75%, #ffffff 100%);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 20s ease infinite;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
 }
@@ -23,14 +23,14 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Section backgrounds with blue colors */
+/* Section backgrounds with professional clean colors */
 section:not(.home) {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   margin: 20px 0;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(33, 150, 243, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(64, 112, 244, 0.15);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(33, 150, 243, 0.2);
+  border: 1px solid rgba(64, 112, 244, 0.1);
 }
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
@@ -49,54 +49,54 @@ section:not(.home) {
 
 /* ========== COMPLETE BLUE THEME OVERRIDES ========== */
 
-/* All section titles */
+/* All section titles - professional style */
 .title {
-  color: #1565c0 !important;
+  color: #4070f4 !important;
 }
 
 .title::before {
-  background: linear-gradient(135deg, #1976d2, #42a5f5) !important;
+  background: linear-gradient(135deg, #4070f4, #2c5aa0) !important;
 }
 
-/* About section */
+/* About section - professional style */
 .about .about-content .left img {
-  border: 5px solid #1976d2 !important;
-  box-shadow: 0 10px 30px rgba(25, 118, 210, 0.3) !important;
+  border: 5px solid #4070f4 !important;
+  box-shadow: 0 8px 25px rgba(64, 112, 244, 0.25) !important;
 }
 
 .about .about-content .right .text {
-  color: #1565c0 !important;
+  color: #2c5aa0 !important;
 }
 
 .about .about-content .right .text span {
-  color: #1976d2 !important;
+  color: #4070f4 !important;
 }
 
-/* Skills section */
+/* Skills section - professional colors */
 .skills .skills-content .column .bars .info span {
-  color: #1565c0 !important;
+  color: #4070f4 !important;
 }
 
 .skills .skills-content .column .bars .line {
-  background: #e3f2fd !important;
+  background: #f0f8ff !important;
 }
 
 .skills .skills-content .column .bars .line::before {
-  background: linear-gradient(135deg, #1976d2, #42a5f5) !important;
+  background: linear-gradient(135deg, #4070f4, #2c5aa0) !important;
 }
 
-/* Services/Projects section */
+/* Services/Projects section - professional style */
 .services .boxes .box,
 .projects .boxes .box {
-  border: 2px solid rgba(25, 118, 210, 0.2) !important;
-  box-shadow: 0 10px 30px rgba(25, 118, 210, 0.2) !important;
+  border: 1px solid rgba(64, 112, 244, 0.15) !important;
+  box-shadow: 0 5px 15px rgba(64, 112, 244, 0.15) !important;
 }
 
 .services .boxes .box:hover,
 .projects .boxes .box:hover {
-  background: linear-gradient(135deg, #1976d2, #42a5f5) !important;
-  transform: translateY(-10px) !important;
-  box-shadow: 0 15px 40px rgba(25, 118, 210, 0.4) !important;
+  background: linear-gradient(135deg, #4070f4, #2c5aa0) !important;
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 30px rgba(64, 112, 244, 0.3) !important;
 }
 
 .services .boxes .box .topic,
@@ -213,74 +213,74 @@ section:not(.home) {
 }
 
 .contact-form .topic {
-  color: #1976d2 !important;
+  color: #4070f4 !important;
 }
 
-/* Form elements */
+/* Form elements - professional style */
 .contact .right form .fields input,
 .contact .right form .textarea textarea {
-  border: 1px solid #bbdefb !important;
+  border: 1px solid #e3f2fd !important;
 }
 
 .contact .right form .fields input:focus,
 .contact .right form .textarea textarea:focus {
-  border-color: #1976d2 !important;
-  box-shadow: 0 0 8px rgba(25, 118, 210, 0.3) !important;
+  border-color: #4070f4 !important;
+  box-shadow: 0 0 8px rgba(64, 112, 244, 0.25) !important;
 }
 
 .contact .right form .button input[type="submit"] {
-  background: linear-gradient(135deg, #1976d2, #42a5f5) !important;
-  border: 1px solid #1976d2 !important;
-  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.3) !important;
+  background: linear-gradient(135deg, #4070f4, #2c5aa0) !important;
+  border: 1px solid #4070f4 !important;
+  box-shadow: 0 5px 15px rgba(64, 112, 244, 0.25) !important;
 }
 
 .contact .right form .button input[type="submit"]:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(64, 112, 244, 0.35) !important;
 }
 
-/* Resume download */
+/* Resume download - professional style */
 .resume-download {
-  background: #e3f2fd !important;
-  border: 2px dashed #1976d2 !important;
+  background: #f0f8ff !important;
+  border: 2px dashed #4070f4 !important;
 }
 
 .resume-download h4 {
-  color: #1976d2 !important;
+  color: #4070f4 !important;
 }
 
-/* Footer */
+/* Footer - professional style */
 footer {
-  background: linear-gradient(135deg, #0d47a1, #1976d2) !important;
-  box-shadow: 0 -5px 15px rgba(25, 118, 210, 0.3) !important;
+  background: linear-gradient(135deg, #2c5aa0, #4070f4) !important;
+  box-shadow: 0 -5px 15px rgba(64, 112, 244, 0.25) !important;
 }
 
 footer span a {
-  color: #90caf9 !important;
+  color: #e3f2fd !important;
 }
 
 footer span a:hover {
   color: #fff !important;
 }
 
-/* Navigation sticky colors */
+/* Navigation sticky colors - professional */
 nav.sticky {
-  background: linear-gradient(135deg, #1976d2, #42a5f5) !important;
+  background: linear-gradient(135deg, #4070f4, #2c5aa0) !important;
 }
 
 /* Media icons */
 .navbar .media-icons a {
-  color: #1976d2 !important;
+  color: #4070f4 !important;
 }
 
 /* Menu button */
 nav .menu-btn {
-  color: #1976d2 !important;
+  color: #4070f4 !important;
 }
 
 /* Skills percentage colors */
 .skills-details .boxes .per {
-  color: #1976d2 !important;
+  color: #4070f4 !important;
 }
 
 /* ========== SOCIAL MEDIA BRAND COLORS - SIMPLE ICONS ========== */
@@ -446,66 +446,66 @@ footer .text span a {
   transform: translateY(-5px) scale(1.1) !important;
 }
 
-/* Certification categories */
+/* Certification categories - professional style */
 .cert-category {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 234, 246, 0.9)) !important;
-  border-left: 4px solid #5c6bc0 !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 248, 255, 0.95)) !important;
+  border-left: 4px solid #4070f4 !important;
 }
 
 .cert-category:hover {
-  background: linear-gradient(135deg, rgba(232, 234, 246, 0.9), rgba(243, 229, 245, 0.9)) !important;
-  box-shadow: 0 10px 25px rgba(92, 107, 192, 0.2) !important;
+  background: linear-gradient(135deg, rgba(240, 248, 255, 0.95), rgba(227, 242, 253, 0.95)) !important;
+  box-shadow: 0 8px 20px rgba(64, 112, 244, 0.2) !important;
 }
 
-/* Achievement items */
+/* Achievement items - professional style */
 .achievement-item {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(232, 234, 246, 0.95)) !important;
-  border-left: 4px solid #5c6bc0 !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 248, 255, 0.95)) !important;
+  border-left: 4px solid #4070f4 !important;
 }
 
 .achievement-item i {
-  background: linear-gradient(135deg, #5c6bc0 0%, #9c27b0 100%) !important;
+  background: linear-gradient(135deg, #4070f4 0%, #2c5aa0 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
 }
 
-/* Scroll button */
+/* Scroll button - professional style */
 .scroll-button a {
-  background: linear-gradient(135deg, #5c6bc0 0%, #9c27b0 100%) !important;
-  box-shadow: 0 6px 20px rgba(92, 107, 192, 0.4) !important;
+  background: linear-gradient(135deg, #4070f4 0%, #2c5aa0 100%) !important;
+  box-shadow: 0 5px 15px rgba(64, 112, 244, 0.3) !important;
 }
 
-/* Navigation sticky colors */
+/* Navigation sticky colors - professional */
 nav.sticky {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(232, 234, 246, 0.95)) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 248, 255, 0.95)) !important;
   backdrop-filter: blur(10px) !important;
-  box-shadow: 0 2px 20px rgba(92, 107, 192, 0.2) !important;
+  box-shadow: 0 2px 15px rgba(64, 112, 244, 0.15) !important;
 }
 
-/* Menu button colors */
+/* Menu button colors - professional */
 nav .menu-btn {
-  background: linear-gradient(135deg, #5c6bc0 0%, #9c27b0 100%) !important;
+  background: linear-gradient(135deg, #4070f4 0%, #2c5aa0 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
 }
 
-/* Additional blue/purple enhancements */
+/* Professional button enhancements */
 .btn-primary:hover {
-  background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%) !important;
+  background: linear-gradient(135deg, #2c5aa0 0%, #1a4480 100%) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 12px 30px rgba(92, 107, 192, 0.5) !important;
+  box-shadow: 0 8px 25px rgba(64, 112, 244, 0.4) !important;
 }
 
 .btn-secondary {
   background-color: transparent !important;
-  color: #5c6bc0 !important;
-  border: 2px solid #5c6bc0 !important;
+  color: #4070f4 !important;
+  border: 2px solid #4070f4 !important;
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #5c6bc0 0%, #9c27b0 100%) !important;
+  background: linear-gradient(135deg, #4070f4 0%, #2c5aa0 100%) !important;
   color: white !important;
 }
 /* Home section with beautiful blue colors */
@@ -1410,7 +1410,7 @@ footer .text span a:hover{
 }
 /*Add on 4 Aug 2025 for decorating Buttons*/
 .btn-primary {
-  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+  background: linear-gradient(135deg, #4070f4 0%, #2c5aa0 100%);
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -1418,7 +1418,7 @@ footer .text span a:hover{
   font-size: 16px;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4);
+  box-shadow: 0 5px 20px rgba(64, 112, 244, 0.3);
   text-decoration: none;
   display: inline-block;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
