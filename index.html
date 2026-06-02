@@ -7,12 +7,54 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      /* Responsive fixes to prevent data mismatches on half-screen or mobile views */
+      /* CRITICAL FIXES TO PREVENT TEXT OVERLAPPING ON HALF-SCREEN OR LAPTOP RESIZES */
+      
+      /* Force parents to automatically resize height based on content */
+      section {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 60px 20px !important;
+        display: block !important;
+      }
+
+      /* Fix the Home/Hero section overflow */
+      .home {
+        display: flex !important;
+        height: 100vh !important;
+        min-height: 600px !important;
+        padding: 0 20px !important;
+      }
+
+      /* Fix About details wrapping */
+      .about-details {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 30px !important;
+        height: auto !important;
+      }
+      .about-details .left, .about-details .right {
+        height: auto !important;
+      }
+
+      /* Fix Skills layout blocks from overcrowding */
+      .skills-details {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 30px !important;
+        height: auto !important;
+      }
+      .skills-details .text, .skills-details .right-bars {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      /* Custom responsive card structure for projects */
       .projects-grid {
         display: flex;
         flex-direction: column;
         gap: 25px;
         width: 100%;
+        height: auto !important;
       }
       .project-card {
         padding: 24px;
@@ -23,9 +65,10 @@
         transition: transform 0.3s ease;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        height: auto !important;
       }
       .project-card:hover {
-        transform: translateY(-3s);
+        transform: translateY(-3px);
       }
       .project-tech {
         font-style: italic;
@@ -44,20 +87,29 @@
       .project-link:hover {
         text-decoration: underline;
       }
-      @media (max-width: 900px) {
+
+      /* Media Query overrides for smaller screens and laptop half-screen layouts */
+      @media (max-width: 990px) {
         .about-details {
           flex-direction: column !important;
           align-items: center;
         }
-        .about-details .left, .about-details .right {
+        .about-details .left {
+          width: 280px !important;
+          margin-bottom: 20px;
+        }
+        .about-details .right {
           width: 100% !important;
-          text-align: center;
+          text-align: left;
         }
         .skills-details {
           flex-direction: column !important;
         }
         .skills-details .text, .skills-details .right-bars {
           width: 100% !important;
+        }
+        .skills-details .boxes {
+          grid-template-columns: 1fr !important; /* Stack info boxes vertically */
         }
       }
     </style>
@@ -102,10 +154,10 @@
       <div class="content">
         <div class="title"><span>About Me</span></div>
         <div class="about-details" style="display: flex; gap: 30px;">
-          <div class="left" style="width: 35%;">
-            <img src="images/myphoto.jpg" alt="Bhoomi Jain Profile Picture" style="width: 100%; border-radius: 12px; object-fit: cover;">
+          <div class="left" style="width: 30%; min-width: 240px;">
+            <img src="myphoto.jpg" alt="Bhoomi Jain Profile Picture" style="width: 100%; border-radius: 12px; object-fit: cover;">
           </div>
-          <div class="right" style="width: 65%;">
+          <div class="right" style="flex: 1; min-width: 280px;">
             <div class="topic">Data Analytics & Predictive Modeling</div>
             <p>
               I am a results-driven Data Analyst and Machine Learning enthusiast with a solid foundation in Python, SQL, and transactional data pipelines. I have a proven track record of building predictive models with up to <b>94% validation accuracy</b> and optimizing querying workflows to reduce retrieval latency by <b>30%</b>.
@@ -124,8 +176,8 @@
     <section class="skills" id="skills">
       <div class="content">
         <div class="title"><span>My Skills</span></div>
-        <div class="skills-details" style="display: flex; gap: 30px;">
-          <div class="text" style="width: 50%;">
+        <div class="skills-details" style="display: flex; gap: 30px; flex-wrap: wrap;">
+          <div class="text" style="flex: 1; min-width: 290px;">
             <div class="topic">Technical Toolset Matrix</div>
             <p>Here is my primary proficiency layout across engineering languages, analytical libraries, and visualization technologies:</p>
             <div class="boxes" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
@@ -147,7 +199,7 @@
               </div>
             </div>
           </div>
-          <div class="right-bars" style="width: 50%; display: flex; flex-direction: column; gap: 15px; justify-content: center;">
+          <div class="right-bars" style="flex: 1; min-width: 290px; display: flex; flex-direction: column; gap: 15px; justify-content: center;">
             <div class="box">
               <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
                 <span>Python & Core Frameworks</span>
@@ -180,21 +232,21 @@
         <div class="projects-grid">
           
           <div class="project-card">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Interactive Business Intelligence & Power BI Dashboards</div>
+            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Power BI Dashboards</div>
             <div class="project-tech">Power BI | DAX | Power Query | Data Modeling</div>
             <p>Designed and developed professional business intelligence dashboards to monitor enterprise operational metrics. Engineered advanced custom DAX measures and extracted multi-source database connections via Power Query. Structured data models to isolate transaction anomalies and present real-time filtering options for executive strategic stakeholders.</p>
             <a href="https://github.com/bhoomi9589/Power_BI_Dashboards" target="_blank" class="project-link"><i class="fab fa-github"></i> View Dashboard Repository →</a>
           </div>
 
           <div class="project-card">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Calorie & Nutrition Analytics Platform</div>
+            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Calorie & Nutrition Tracker</div>
             <div class="project-tech">Python | Flask REST API | React.js | Chart.js</div>
             <p>Built a full-stack health analytics platform integrating external ingestion endpoints to fetch and parse structural nutrient data profiles. Implemented responsive interactive data visualization layers using Chart.js on a decoupled frontend layout to track macro-nutrient distribution streams over variable windows.</p>
             <a href="https://github.com/bhoomi9589/Calorie_Nutrition_Tracker" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code Base →</a>
           </div>
 
           <div class="project-card">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Clinical Diabetes Risk Prediction Engine</div>
+            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Diabetes Predictor</div>
             <div class="project-tech">Python | Scikit-Learn | Pandas | PCA Clustering</div>
             <p>Engineered an end-to-end classification pipeline implementing Logistic Regression and Decision Trees on large-scale healthcare arrays. Cleaned missing parameters via custom feature encoders and leveraged Principal Component Analysis (PCA) to extract cluster segments identifying patient health vulnerability quadrants.</p>
             <a href="https://github.com/bhoomi9589/diabetes_predictor" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code Base →</a>
