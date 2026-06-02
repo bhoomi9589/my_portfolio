@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      /* CRITICAL FIXES TO PREVENT TEXT OVERLAPPING ON HALF-SCREEN OR LAPTOP RESIZES */
+      /* CRITICAL CORE FIXES TO PREVENT OVERLAPPING AND SECURE THE PHOTO DISPLAY */
       
-      /* Force parents to automatically resize height based on content */
       section {
         height: auto !important;
         min-height: auto !important;
-        padding: 60px 20px !important;
+        padding: 80px 20px !important;
         display: block !important;
       }
 
-      /* Fix the Home/Hero section overflow */
       .home {
         display: flex !important;
         height: 100vh !important;
@@ -25,62 +23,136 @@
         padding: 0 20px !important;
       }
 
-      /* Fix About details wrapping */
+      /* Force direct alignment configuration for the profile picture block */
       .about-details {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 30px !important;
+        gap: 40px !important;
         height: auto !important;
+        align-items: center !important;
       }
-      .about-details .left, .about-details .right {
+      
+      .about-details .left-img-block {
+        width: 320px !important;
+        max-width: 100% !important;
+        height: 320px !important;
+        border-radius: 16px !important;
+        box-shadow: 0 10px 25px rgba(64, 112, 244, 0.15) !important;
+        overflow: hidden !important;
+        border: 4px solid #ffffff !important;
+        display: block !important;
+      }
+
+      .about-details .left-img-block img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+
+      .about-details .right-text-block {
+        flex: 1 !important;
+        min-width: 290px !important;
         height: auto !important;
       }
 
-      /* Fix Skills layout blocks from overcrowding */
+      /* HIGHLY ATTRACTIVE MODERN STYLING FOR THE SKILLS SECTION */
       .skills-details {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 30px !important;
+        gap: 40px !important;
         height: auto !important;
-      }
-      .skills-details .text, .skills-details .right-bars {
-        width: 100% !important;
-        height: auto !important;
+        margin-top: 30px;
       }
 
-      /* Custom responsive card structure for projects */
+      .skills-details .skills-text-side {
+        flex: 1 !important;
+        min-width: 300px !important;
+      }
+
+      .skills-details .skills-bars-side {
+        flex: 1 !important;
+        min-width: 300px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+      }
+
+      /* Decorative Skill Cards */
+      .skill-badge-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        border-top: 4px solid #4070f4;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .skill-badge-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(64, 112, 244, 0.08);
+      }
+      .skill-badge-card i {
+        font-size: 24px;
+        color: #4070f4;
+        margin-bottom: 10px;
+      }
+
+      /* Premium Animated Progress Bars */
+      .custom-progress-box {
+        width: 100%;
+      }
+      .custom-progress-label {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #2c3e50;
+        font-size: 0.95rem;
+      }
+      .custom-progress-bg {
+        background: #eef2f7;
+        height: 12px;
+        border-radius: 6px;
+        width: 100%;
+        overflow: hidden;
+      }
+      .custom-progress-fill {
+        background: linear-gradient(90deg, #4070f4 0%, #1a49c4 100%);
+        height: 100%;
+        border-radius: 6px;
+      }
+
+      /* Clean project list layouts */
       .projects-grid {
         display: flex;
         flex-direction: column;
         gap: 25px;
         width: 100%;
-        height: auto !important;
       }
       .project-card {
-        padding: 24px;
+        padding: 26px;
         background: #ffffff;
         border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         border-left: 5px solid #4070f4;
         transition: transform 0.3s ease;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        height: auto !important;
       }
       .project-card:hover {
         transform: translateY(-3px);
       }
       .project-tech {
         font-style: italic;
-        color: #555;
-        font-weight: 500;
+        color: #4070f4;
+        font-weight: 600;
         margin-bottom: 12px;
         font-size: 0.95rem;
       }
       .project-link {
         display: inline-block;
         margin-top: 12px;
-        color: #4070f4;
+        color: #1a49c4;
         font-weight: 600;
         text-decoration: none;
       }
@@ -88,28 +160,20 @@
         text-decoration: underline;
       }
 
-      /* Media Query overrides for smaller screens and laptop half-screen layouts */
+      /* Split layout laptop viewport adjustments */
       @media (max-width: 990px) {
         .about-details {
           flex-direction: column !important;
-          align-items: center;
+          text-align: center !important;
         }
-        .about-details .left {
-          width: 280px !important;
-          margin-bottom: 20px;
-        }
-        .about-details .right {
-          width: 100% !important;
-          text-align: left;
+        .about-details .left-img-block {
+          margin: 0 auto;
         }
         .skills-details {
           flex-direction: column !important;
         }
-        .skills-details .text, .skills-details .right-bars {
-          width: 100% !important;
-        }
-        .skills-details .boxes {
-          grid-template-columns: 1fr !important; /* Stack info boxes vertically */
+        .skills-grid-layout {
+          grid-template-columns: 1fr !important;
         }
       }
     </style>
@@ -153,11 +217,13 @@
     <section class="about" id="about">
       <div class="content">
         <div class="title"><span>About Me</span></div>
-        <div class="about-details" style="display: flex; gap: 30px;">
-          <div class="left" style="width: 30%; min-width: 240px;">
-            <img src="myphoto.jpg" alt="Bhoomi Jain Profile Picture" style="width: 100%; border-radius: 12px; object-fit: cover;">
+        <div class="about-details">
+          
+          <div class="left-img-block">
+            <img src="myphoto.jpg" alt="Bhoomi Jain Professional Portrait">
           </div>
-          <div class="right" style="flex: 1; min-width: 280px;">
+          
+          <div class="right-text-block">
             <div class="topic">Data Analytics & Predictive Modeling</div>
             <p>
               I am a results-driven Data Analyst and Machine Learning enthusiast with a solid foundation in Python, SQL, and transactional data pipelines. I have a proven track record of building predictive models with up to <b>94% validation accuracy</b> and optimizing querying workflows to reduce retrieval latency by <b>30%</b>.
@@ -169,6 +235,7 @@
               <a href="resume-content.html" target="_blank"><button>View Detailed Resume</button></a>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -176,52 +243,80 @@
     <section class="skills" id="skills">
       <div class="content">
         <div class="title"><span>My Skills</span></div>
-        <div class="skills-details" style="display: flex; gap: 30px; flex-wrap: wrap;">
-          <div class="text" style="flex: 1; min-width: 290px;">
-            <div class="topic">Technical Toolset Matrix</div>
-            <p>Here is my primary proficiency layout across engineering languages, analytical libraries, and visualization technologies:</p>
-            <div class="boxes" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
-              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
-                <div class="topic" style="font-weight: 600; color: #4070f4;">Languages</div>
-                <p style="margin: 0; font-size: 0.9rem;">Python, SQL</p>
+        <div class="skills-details">
+          
+          <div class="skills-text-side">
+            <div class="topic" style="margin-bottom: 15px;">Technical Toolset Matrix</div>
+            <p style="margin-bottom: 25px; color: #555;">Core analytical competencies structured over production implementations, statistical reporting engines, and workflow pipelines:</p>
+            
+            <div class="skills-grid-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="skill-badge-card">
+                <i class="fas fa-code"></i>
+                <div style="font-weight: 600; font-size: 1.1rem; color: #2c3e50; margin-bottom: 5px;">Languages</div>
+                <p style="margin: 0; font-size: 0.9rem; color: #666;">Python, SQL</p>
               </div>
-              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
-                <div class="topic" style="font-weight: 600; color: #4070f4;">Data Science</div>
-                <p style="margin: 0; font-size: 0.9rem;">Scikit-Learn, Pandas, NumPy, OpenCV</p>
+              <div class="skill-badge-card">
+                <i class="fas fa-brain"></i>
+                <div style="font-weight: 600; font-size: 1.1rem; color: #2c3e50; margin-bottom: 5px;">Data Science</div>
+                <p style="margin: 0; font-size: 0.9rem; color: #666;">Scikit-Learn, Pandas, NumPy, OpenCV</p>
               </div>
-              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
-                <div class="topic" style="font-weight: 600; color: #4070f4;">BI & Analytics</div>
-                <p style="margin: 0; font-size: 0.9rem;">Power BI, Advanced Excel</p>
+              <div class="skill-badge-card">
+                <i class="fas fa-chart-bar"></i>
+                <div style="font-weight: 600; font-size: 1.1rem; color: #2c3e50; margin-bottom: 5px;">BI & Analytics</div>
+                <p style="margin: 0; font-size: 0.9rem; color: #666;">Power BI, Advanced Excel</p>
               </div>
-              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
-                <div class="topic" style="font-weight: 600; color: #4070f4;">Web Frameworks</div>
-                <p style="margin: 0; font-size: 0.9rem;">Flask (REST APIs), React.js, Streamlit</p>
+              <div class="skill-badge-card">
+                <i class="fas fa-laptop-code"></i>
+                <div style="font-weight: 600; font-size: 1.1rem; color: #2c3e50; margin-bottom: 5px;">Web Tech</div>
+                <p style="margin: 0; font-size: 0.9rem; color: #666;">Flask REST APIs, React.js, Streamlit</p>
               </div>
             </div>
           </div>
-          <div class="right-bars" style="flex: 1; min-width: 290px; display: flex; flex-direction: column; gap: 15px; justify-content: center;">
-            <div class="box">
-              <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
-                <span>Python & Core Frameworks</span>
-                <span class="per">90%</span>
+          
+          <div class="skills-bars-side">
+            
+            <div class="custom-progress-box">
+              <div class="custom-progress-label">
+                <span>Python Programming & Data Manipulation (Pandas/NumPy)</span>
+                <span>90%</span>
               </div>
-              <div class="line python" style="background: #4070f4; height: 8px; border-radius: 4px; width: 90%;"></div>
-            </div>
-            <div class="box">
-              <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
-                <span>SQL Query Formulation</span>
-                <span class="per">85%</span>
+              <div class="custom-progress-bg">
+                <div class="custom-progress-fill" style="width: 90%;"></div>
               </div>
-              <div class="line sql" style="background: #4070f4; height: 8px; border-radius: 4px; width: 85%;"></div>
             </div>
-            <div class="box">
-              <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
-                <span>Power BI Dashboard Optimization</span>
-                <span class="per">88%</span>
+
+            <div class="custom-progress-box">
+              <div class="custom-progress-label">
+                <span>SQL Database Querying</span>
+                <span>85%</span>
               </div>
-              <div class="line bi" style="background: #4070f4; height: 8px; border-radius: 4px; width: 88%;"></div>
+              <div class="custom-progress-bg">
+                <div class="custom-progress-fill" style="width: 85%;"></div>
+              </div>
             </div>
+
+            <div class="custom-progress-box">
+              <div class="custom-progress-label">
+                <span>Power BI Modeling & DAX Formulation</span>
+                <span>88%</span>
+              </div>
+              <div class="custom-progress-bg">
+                <div class="custom-progress-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="custom-progress-box">
+              <div class="custom-progress-label">
+                <span>Machine Learning Pipelines (Scikit-Learn)</span>
+                <span>85%</span>
+              </div>
+              <div class="custom-progress-bg">
+                <div class="custom-progress-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+
           </div>
+          
         </div>
       </div>
     </section>
@@ -232,21 +327,21 @@
         <div class="projects-grid">
           
           <div class="project-card">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Power BI Dashboards</div>
+            <div class="topic" style="font-size: 22px; color: #2c3e50; font-weight: 600;">Power BI Dashboards</div>
             <div class="project-tech">Power BI | DAX | Power Query | Data Modeling</div>
             <p>Designed and developed professional business intelligence dashboards to monitor enterprise operational metrics. Engineered advanced custom DAX measures and extracted multi-source database connections via Power Query. Structured data models to isolate transaction anomalies and present real-time filtering options for executive strategic stakeholders.</p>
             <a href="https://github.com/bhoomi9589/Power_BI_Dashboards" target="_blank" class="project-link"><i class="fab fa-github"></i> View Dashboard Repository →</a>
           </div>
 
           <div class="project-card">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Calorie & Nutrition Tracker</div>
+            <div class="topic" style="font-size: 22px; color: #2c3e50; font-weight: 600;">Calorie & Nutrition Tracker</div>
             <div class="project-tech">Python | Flask REST API | React.js | Chart.js</div>
             <p>Built a full-stack health analytics platform integrating external ingestion endpoints to fetch and parse structural nutrient data profiles. Implemented responsive interactive data visualization layers using Chart.js on a decoupled frontend layout to track macro-nutrient distribution streams over variable windows.</p>
             <a href="https://github.com/bhoomi9589/Calorie_Nutrition_Tracker" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code Base →</a>
           </div>
 
           <div class="project-card">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Diabetes Predictor</div>
+            <div class="topic" style="font-size: 22px; color: #2c3e50; font-weight: 600;">Diabetes Predictor</div>
             <div class="project-tech">Python | Scikit-Learn | Pandas | PCA Clustering</div>
             <p>Engineered an end-to-end classification pipeline implementing Logistic Regression and Decision Trees on large-scale healthcare arrays. Cleaned missing parameters via custom feature encoders and leveraged Principal Component Analysis (PCA) to extract cluster segments identifying patient health vulnerability quadrants.</p>
             <a href="https://github.com/bhoomi9589/diabetes_predictor" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code Base →</a>
