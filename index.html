@@ -6,6 +6,61 @@
     <link rel="stylesheet" href="styles/style1.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Responsive fixes to prevent data mismatches on half-screen or mobile views */
+      .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+      }
+      .project-card {
+        padding: 24px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        border-left: 5px solid #4070f4;
+        transition: transform 0.3s ease;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .project-card:hover {
+        transform: translateY(-3s);
+      }
+      .project-tech {
+        font-style: italic;
+        color: #555;
+        font-weight: 500;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+      .project-link {
+        display: inline-block;
+        margin-top: 12px;
+        color: #4070f4;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .project-link:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 900px) {
+        .about-details {
+          flex-direction: column !important;
+          align-items: center;
+        }
+        .about-details .left, .about-details .right {
+          width: 100% !important;
+          text-align: center;
+        }
+        .skills-details {
+          flex-direction: column !important;
+        }
+        .skills-details .text, .skills-details .right-bars {
+          width: 100% !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="scroll-button">
@@ -34,8 +89,8 @@
         <div class="text">
           <div class="text-one">Hello, I am</div>
           <div class="text-two">Bhoomi Jain</div>
-          <div class="text-three">Data Analyst & ML Enthusiast</div>
-          <div class="text-four">Turning complex data into clear, actionable business insights.</div>
+          <div class="text-three">Data Analyst & ML Developer</div>
+          <div class="text-four">Turning complex data silos into actionable business insights.</div>
         </div>
         <div class="button">
           <a href="#projects"><button>View My Work</button></a>
@@ -46,19 +101,19 @@
     <section class="about" id="about">
       <div class="content">
         <div class="title"><span>About Me</span></div>
-        <div class="about-details">
-          <div class="left">
-            <img src="images/myphoto.jpg" alt="Bhoomi Jain Profile Picture">
+        <div class="about-details" style="display: flex; gap: 30px;">
+          <div class="left" style="width: 35%;">
+            <img src="images/myphoto.jpg" alt="Bhoomi Jain Profile Picture" style="width: 100%; border-radius: 12px; object-fit: cover;">
           </div>
-          <div class="right">
+          <div class="right" style="width: 65%;">
             <div class="topic">Data Analytics & Predictive Modeling</div>
             <p>
-              I am a results-driven Data Analyst and Machine Learning enthusiast with a solid foundation in Python, SQL, and data pipelines. I have a proven track record of building predictive models with up to <b>94% accuracy</b> and optimizing workflows to reduce data retrieval latency by <b>30%</b>.
+              I am a results-driven Data Analyst and Machine Learning enthusiast with a solid foundation in Python, SQL, and transactional data pipelines. I have a proven track record of building predictive models with up to <b>94% validation accuracy</b> and optimizing querying workflows to reduce retrieval latency by <b>30%</b>.
             </p>
             <p>
-              Currently expanding my capabilities across statistical computation, interactive dashboard architectures (Power BI), and automated feature engineering, I love extracting meaningful patterns out of unstructured data silos to support corporate strategic decision-making.
+              Currently specializing across interactive business intelligence dashboard architectures (Power BI) and data transformation pipelines, I enjoy extracting key performance insights out of complex datasets to support structural operational decisions.
             </p>
-            <div class="button">
+            <div class="button" style="margin-top: 20px;">
               <a href="resume-content.html" target="_blank"><button>View Detailed Resume</button></a>
             </div>
           </div>
@@ -69,57 +124,50 @@
     <section class="skills" id="skills">
       <div class="content">
         <div class="title"><span>My Skills</span></div>
-        <div class="skills-details">
-          <div class="text">
-            <div class="topic">Technical Expertise Matrix</div>
-            <p>Here is my primary proficiency layout across engineering languages, analytical libraries, and visualization technologies built during my engineering workflows:</p>
-            <div class="boxes">
-              <div class="box">
-                <div class="topic">Languages</div>
-                <p>Python, SQL</p>
+        <div class="skills-details" style="display: flex; gap: 30px;">
+          <div class="text" style="width: 50%;">
+            <div class="topic">Technical Toolset Matrix</div>
+            <p>Here is my primary proficiency layout across engineering languages, analytical libraries, and visualization technologies:</p>
+            <div class="boxes" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
+                <div class="topic" style="font-weight: 600; color: #4070f4;">Languages</div>
+                <p style="margin: 0; font-size: 0.9rem;">Python, SQL</p>
               </div>
-              <div class="box">
-                <div class="topic">AI & ML Frameworks</div>
-                <p>Scikit-Learn, Pandas, NumPy, OpenCV</p>
+              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
+                <div class="topic" style="font-weight: 600; color: #4070f4;">Data Science</div>
+                <p style="margin: 0; font-size: 0.9rem;">Scikit-Learn, Pandas, NumPy, OpenCV</p>
               </div>
-              <div class="box">
-                <div class="topic">Backend & Frontend</div>
-                <p>Flask (REST APIs), React.js, Streamlit</p>
+              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
+                <div class="topic" style="font-weight: 600; color: #4070f4;">BI & Analytics</div>
+                <p style="margin: 0; font-size: 0.9rem;">Power BI, Advanced Excel</p>
               </div>
-              <div class="box">
-                <div class="topic">Tools & BI</div>
-                <p>Power BI, GitHub, Excel, Chart.js</p>
+              <div class="box" style="background: #f9fbfd; padding: 15px; border-radius: 8px;">
+                <div class="topic" style="font-weight: 600; color: #4070f4;">Web Frameworks</div>
+                <p style="margin: 0; font-size: 0.9rem;">Flask (REST APIs), React.js, Streamlit</p>
               </div>
             </div>
           </div>
-          <div class="right-bars">
+          <div class="right-bars" style="width: 50%; display: flex; flex-direction: column; gap: 15px; justify-content: center;">
             <div class="box">
-              <div class="info">
-                <span>Python & Data Manipulation (Pandas/NumPy)</span>
+              <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
+                <span>Python & Core Frameworks</span>
                 <span class="per">90%</span>
               </div>
-              <div class="line python"></div>
+              <div class="line python" style="background: #4070f4; height: 8px; border-radius: 4px; width: 90%;"></div>
             </div>
             <div class="box">
-              <div class="info">
-                <span>SQL & Database Querying</span>
+              <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
+                <span>SQL Query Formulation</span>
                 <span class="per">85%</span>
               </div>
-              <div class="line sql"></div>
+              <div class="line sql" style="background: #4070f4; height: 8px; border-radius: 4px; width: 85%;"></div>
             </div>
             <div class="box">
-              <div class="info">
-                <span>Machine Learning & Scikit-Learn Pipeline</span>
+              <div class="info" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;">
+                <span>Power BI Dashboard Optimization</span>
                 <span class="per">88%</span>
               </div>
-              <div class="line ml"></div>
-            </div>
-            <div class="box">
-              <div class="info">
-                <span>Data Visualization (Power BI / Matplotlib)</span>
-                <span class="per">85%</span>
-              </div>
-              <div class="line bi"></div>
+              <div class="line bi" style="background: #4070f4; height: 8px; border-radius: 4px; width: 88%;"></div>
             </div>
           </div>
         </div>
@@ -128,27 +176,28 @@
 
     <section class="projects" id="projects">
       <div class="content">
-        <div class="title"><span>My Projects</span></div>
-        <div class="boxes">
+        <div class="title"><span>Featured Analytics Projects</span></div>
+        <div class="projects-grid">
           
-          <div class="box" style="padding: 20px; background: #fff; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Calorie & Nutrition Tracker</div>
-            <p style="font-style: italic; color: #666; margin-bottom: 10px;">Python | Flask | React.js | Chart.js | REST API integration</p>
-            <p>Built a full-stack web application integrating the Spoonacular REST API to fetch and log real-time nutritional data for thousands of food items. Implemented interactive Chart.js visualizations on a React frontend to provide users with clear insights into macronutrient distributions.</p>
-            <a href="https://github.com/bhoomi9589/Calorie_Nutrition_Tracker" target="_blank" style="color: #4070f4; font-weight: 500; text-decoration: underline;">View Code Base →</a>
+          <div class="project-card">
+            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Interactive Business Intelligence & Power BI Dashboards</div>
+            <div class="project-tech">Power BI | DAX | Power Query | Data Modeling</div>
+            <p>Designed and developed professional business intelligence dashboards to monitor enterprise operational metrics. Engineered advanced custom DAX measures and extracted multi-source database connections via Power Query. Structured data models to isolate transaction anomalies and present real-time filtering options for executive strategic stakeholders.</p>
+            <a href="https://github.com/bhoomi9589/Power_BI_Dashboards" target="_blank" class="project-link"><i class="fab fa-github"></i> View Dashboard Repository →</a>
           </div>
 
-          <div class="box" style="padding: 20px; background: #fff; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Diabetes Predictor Platform</div>
-            <p style="font-style: italic; color: #666; margin-bottom: 10px;">Python | Scikit-Learn | Pandas | NumPy | Matplotlib</p>
-            <p>Built a machine learning pipeline utilizing Logistic Regression, KNN, and Decision Trees to predict diabetes risk levels based on CDC health indicators. Pre-processed large-scale healthcare data with Pandas and implemented cluster visualizations via K-Means and PCA to analyze patient segments.</p>
-            <a href="https://github.com/bhoomi9589/diabetes_predictor" target="_blank" style="color: #4070f4; font-weight: 500; text-decoration: underline;">View Code Base →</a>
+          <div class="project-card">
+            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Calorie & Nutrition Analytics Platform</div>
+            <div class="project-tech">Python | Flask REST API | React.js | Chart.js</div>
+            <p>Built a full-stack health analytics platform integrating external ingestion endpoints to fetch and parse structural nutrient data profiles. Implemented responsive interactive data visualization layers using Chart.js on a decoupled frontend layout to track macro-nutrient distribution streams over variable windows.</p>
+            <a href="https://github.com/bhoomi9589/Calorie_Nutrition_Tracker" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code Base →</a>
           </div>
 
-          <div class="box" style="padding: 20px; background: #fff; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Movie Recommendation Engine</div>
-            <p style="font-style: italic; color: #666; margin-bottom: 10px;">Python | NLP | CountVectorizer | Cosine Similarity | Flask</p>
-            <p>Developed a content-based movie recommendation filter using text vectorization and linguistic matrix dot products. Tied vector scoring logic into a clean asynchronous interface handling real-time runtime operations gracefully.</p>
+          <div class="project-card">
+            <div class="topic" style="font-size: 22px; color: #4070f4; font-weight: 600;">Clinical Diabetes Risk Prediction Engine</div>
+            <div class="project-tech">Python | Scikit-Learn | Pandas | PCA Clustering</div>
+            <p>Engineered an end-to-end classification pipeline implementing Logistic Regression and Decision Trees on large-scale healthcare arrays. Cleaned missing parameters via custom feature encoders and leveraged Principal Component Analysis (PCA) to extract cluster segments identifying patient health vulnerability quadrants.</p>
+            <a href="https://github.com/bhoomi9589/diabetes_predictor" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code Base →</a>
           </div>
 
         </div>
@@ -159,17 +208,17 @@
       <div class="content">
         <div class="title"><span>Contact Me</span></div>
         <div class="contact-content">
-          <div class="contact-details" style="flex: 1;">
+          <div class="contact-details">
             <div class="topic">Let's Connect!</div>
-            <p>I am actively seeking data analyst roles and core engineering internships where I can apply my predictive analytics and workflow optimization frameworks. Let's build something insightful together.</p>
-            <div class="info-box" style="margin-top: 15px;">
-              <p><i class="fas fa-envelope" style="color: #4070f4; width: 25px;"></i> bhoomi.jain1212@gmail.com</p>
-              <p><i class="fas fa-phone" style="color: #4070f4; width: 25px;"></i> +91 9589148357</p>
-              <p><i class="fas fa-map-marker-alt" style="color: #4070f4; width: 25px;"></i> Bhopal, MP, India</p>
+            <p>I am looking for challenging data analyst opportunities and analytical core internships where I can add technical value via data pipelines and dashboard engineering. Let's talk.</p>
+            <div class="info-box" style="margin-top: 15px; font-size: 1rem; color: #333;">
+              <p style="margin-bottom: 8px;"><i class="fas fa-envelope" style="color: #4070f4; width: 25px;"></i> bhoomi.jain1212@gmail.com</p>
+              <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: #4070f4; width: 25px;"></i> +91 9589148357</p>
+              <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt" style="color: #4070f4; width: 25px;"></i> Bhopal, MP, India</p>
             </div>
             <div class="social-icons" style="margin-top: 20px; font-size: 24px;">
               <a href="https://linkedin.com/in/bhoomi-jain-1babb42a3" target="_blank" style="margin-right: 15px; color: #4070f4;"><i class="fab fa-linkedin"></i></a>
-              <a href="https://github.com/bhoomi9589" target="_blank" style="margin-right: 15px; color: #333;"><i class="fab fa-github"></i></a>
+              <a href="https://github.com/bhoomi9589" target="_blank" style="color: #333;"><i class="fab fa-github"></i></a>
             </div>
           </div>
         </div>
