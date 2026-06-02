@@ -3,27 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <title>Bhoomi Jain - Data Analyst Portfolio</title>
+    <!-- Relative stylesheet path aligned with your portfolio directory -->
     <link rel="stylesheet" href="styles/style1.css" />
+    <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      /* CRITICAL CORE FIXES TO PREVENT OVERLAPPING AND SECURE THE PHOTO DISPLAY */
-      
+      /* RESPONSIVE COHERENCE OVERRIDES TO PREVENT OVERLAPPING */
       section {
         height: auto !important;
         min-height: auto !important;
         padding: 80px 20px !important;
         display: block !important;
       }
-
       .home {
         display: flex !important;
         height: 100vh !important;
         min-height: 600px !important;
         padding: 0 20px !important;
       }
-
-      /* Force direct alignment configuration for the profile picture block */
       .about-details {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -31,7 +29,6 @@
         height: auto !important;
         align-items: center !important;
       }
-      
       .about-details .left-img-block {
         width: 320px !important;
         max-width: 100% !important;
@@ -42,21 +39,17 @@
         border: 4px solid #ffffff !important;
         display: block !important;
       }
-
       .about-details .left-img-block img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
         display: block !important;
       }
-
       .about-details .right-text-block {
         flex: 1 !important;
         min-width: 290px !important;
         height: auto !important;
       }
-
-      /* HIGHLY ATTRACTIVE MODERN STYLING FOR THE SKILLS SECTION */
       .skills-details {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -64,12 +57,10 @@
         height: auto !important;
         margin-top: 30px;
       }
-
       .skills-details .skills-text-side {
         flex: 1 !important;
         min-width: 300px !important;
       }
-
       .skills-details .skills-bars-side {
         flex: 1 !important;
         min-width: 300px !important;
@@ -77,8 +68,6 @@
         flex-direction: column !important;
         gap: 24px !important;
       }
-
-      /* Decorative Skill Cards */
       .skill-badge-card {
         background: #ffffff;
         padding: 20px;
@@ -96,8 +85,6 @@
         color: #4070f4;
         margin-bottom: 10px;
       }
-
-      /* Premium Animated Progress Bars */
       .custom-progress-box {
         width: 100%;
       }
@@ -121,8 +108,6 @@
         height: 100%;
         border-radius: 6px;
       }
-
-      /* Clean project list layouts */
       .projects-grid {
         display: flex;
         flex-direction: column;
@@ -160,7 +145,35 @@
         text-decoration: underline;
       }
 
-      /* Split layout laptop viewport adjustments */
+      /* CERTIFICATION SECTION MODERN STYLING */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+      }
+      .cert-card {
+        background: #ffffff;
+        padding: 22px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        border-top: 4px solid #1a49c4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .cert-title {
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #2c3e50;
+        margin-bottom: 6px;
+      }
+      .cert-issuer {
+        font-size: 0.88rem;
+        color: #7f8c8d;
+        font-weight: 500;
+      }
+
       @media (max-width: 990px) {
         .about-details {
           flex-direction: column !important;
@@ -179,10 +192,12 @@
     </style>
   </head>
   <body>
+    <!-- Move to top button -->
     <div class="scroll-button">
       <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
 
+    <!-- Navigation Menu -->
     <nav>
       <div class="navbar">
         <div class="logo"><a href="#">Portfolio.</a></div>
@@ -200,6 +215,7 @@
       </div>
     </nav>
 
+    <!-- Home Section Start -->
     <section class="home" id="home">
       <div class="home-content">
         <div class="text">
@@ -214,6 +230,7 @@
       </div>
     </section>
 
+    <!-- About Section Start -->
     <section class="about" id="about">
       <div class="content">
         <div class="title"><span>About Me</span></div>
@@ -232,7 +249,8 @@
               Currently specializing across interactive business intelligence dashboard architectures (Power BI) and data transformation pipelines, I enjoy extracting key performance insights out of complex datasets to support structural operational decisions.
             </p>
             <div class="button" style="margin-top: 20px;">
-              <a href="resume-content.html" target="_blank"><button>View Detailed Resume</button></a>
+              <!-- POINTED TO THE RESUME FILE ASSET -->
+              <a href="Bhoomi Jain.docx" download><button><i class="fas fa-download"></i> Download Resume (.docx)</button></a>
             </div>
           </div>
           
@@ -240,6 +258,7 @@
       </div>
     </section>
 
+    <!-- Skills Section Start -->
     <section class="skills" id="skills">
       <div class="content">
         <div class="title"><span>My Skills</span></div>
@@ -274,53 +293,72 @@
           </div>
           
           <div class="skills-bars-side">
-            
             <div class="custom-progress-box">
               <div class="custom-progress-label">
                 <span>Python Programming & Data Manipulation (Pandas/NumPy)</span>
                 <span>90%</span>
               </div>
-              <div class="custom-progress-bg">
-                <div class="custom-progress-fill" style="width: 90%;"></div>
-              </div>
+              <div class="custom-progress-bg"><div class="custom-progress-fill" style="width: 90%;"></div></div>
             </div>
-
             <div class="custom-progress-box">
               <div class="custom-progress-label">
                 <span>SQL Database Querying</span>
                 <span>85%</span>
               </div>
-              <div class="custom-progress-bg">
-                <div class="custom-progress-fill" style="width: 85%;"></div>
-              </div>
+              <div class="custom-progress-bg"><div class="custom-progress-fill" style="width: 85%;"></div></div>
             </div>
-
             <div class="custom-progress-box">
               <div class="custom-progress-label">
                 <span>Power BI Modeling & DAX Formulation</span>
                 <span>88%</span>
               </div>
-              <div class="custom-progress-bg">
-                <div class="custom-progress-fill" style="width: 88%;"></div>
-              </div>
+              <div class="custom-progress-bg"><div class="custom-progress-fill" style="width: 88%;"></div></div>
             </div>
-
             <div class="custom-progress-box">
               <div class="custom-progress-label">
                 <span>Machine Learning Pipelines (Scikit-Learn)</span>
                 <span>85%</span>
               </div>
-              <div class="custom-progress-bg">
-                <div class="custom-progress-fill" style="width: 85%;"></div>
-              </div>
+              <div class="custom-progress-bg"><div class="custom-progress-fill" style="width: 85%;"></div></div>
             </div>
-
           </div>
           
         </div>
       </div>
     </section>
 
+    <!-- Certifications Section Start (INJECTED FROM UPDATED RESUME DATA) -->
+    <section class="certifications" id="certifications" style="background: #fdfefe;">
+      <div class="content">
+        <div class="title"><span>Certifications</span></div>
+        <p style="text-align: center; color: #555; margin-bottom: 20px;">Professional accreditations and technical specializations validated by engineering providers:</p>
+        
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-title">Generative AI Certification</div>
+            <div class="cert-issuer"><i class="fas fa-award"></i> IBM Skills Build</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-title">Python for Data Science</div>
+            <div class="cert-issuer"><i class="fas fa-award"></i> Technology Developers</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-title">Data Science</div>
+            <div class="cert-issuer"><i class="fas fa-award"></i> Netligent Technologies</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-title">Modern Web Tech and Gen AI</div>
+            <div class="cert-issuer"><i class="fas fa-award"></i> Technology Developers</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-title">Basics of Python Programming</div>
+            <div class="cert-issuer"><i class="fas fa-award"></i> Technology Developers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section Start -->
     <section class="projects" id="projects">
       <div class="content">
         <div class="title"><span>Featured Analytics Projects</span></div>
@@ -351,6 +389,7 @@
       </div>
     </section>
 
+    <!-- Contact Section Start -->
     <section class="contact" id="contact">
       <div class="content">
         <div class="title"><span>Contact Me</span></div>
@@ -372,12 +411,14 @@
       </div>
     </section>
 
+    <!-- Footer Section Start -->
     <footer>
       <div class="text">
         <span>Created By <a href="#">Bhoomi Jain</a> | &#169; 2026 </span>
       </div>
     </footer>
 
+    <!-- Script interaction connection -->
     <script src="scripts/script1.js"></script>
   </body>
 </html>
